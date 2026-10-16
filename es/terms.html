@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="alternate" hreflang="en" href="../terms.html">
-<link rel="stylesheet" href="../style.css?v=20261017">
+<link rel="stylesheet" href="../style.css?v=20261019">
 </head>
 <body>
 
@@ -22,7 +22,13 @@
       <a href="index.html#about">Empresa</a>
       <a href="index.html#products">Productos</a>
       <a href="index.html#faq">Preguntas</a>
-      <a href="../terms.html" class="lang" hreflang="en" lang="en" aria-label="View in English">EN</a>
+      <details class="lang-menu">
+        <summary aria-label="Language / Idioma">ES</summary>
+        <div class="lang-list">
+          <a href="../terms.html" hreflang="en" lang="en">English</a>
+          <a href="terms.html" hreflang="es" lang="es" aria-current="page">Español</a>
+        </div>
+      </details>
       <a href="index.html#contact" class="btn btn-primary">Contacto</a>
     </nav>
   </div>
@@ -135,5 +141,10 @@
   </div>
 </footer>
 
+<script>
+document.addEventListener('click', function (e) {
+  document.querySelectorAll('details.lang-menu[open]').forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
+});
+</script>
 </body>
 </html>
